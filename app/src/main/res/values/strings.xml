@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WiproAndroidProficiencyTest</string>
+    <string name="network_unavailable_error_msg">Please make sure to have stable Internet Connection</string>
+    <string name="server_unavailable_error_msg">Error fetching data from Server. Please try again.</string>
 </resources>
