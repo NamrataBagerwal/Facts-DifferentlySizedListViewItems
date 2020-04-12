@@ -31,6 +31,10 @@ class FactsViewModel(private val factsRepository: FactsRepositoryImpl): ViewMode
         return factsLiveData
     }
 
+    fun updateFactsLiveData(){
+        loadFacts()
+    }
+
     override fun onCleared() {
         super.onCleared()
         if (coroutineContext.isActive){
