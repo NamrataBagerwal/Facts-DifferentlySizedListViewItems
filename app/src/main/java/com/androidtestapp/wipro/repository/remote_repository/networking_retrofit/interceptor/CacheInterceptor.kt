@@ -1,4 +1,4 @@
-package com.androidtestapp.wipro.repository.remotedatastore.networking.retrofit.interceptor
+package com.androidtestapp.wipro.repository.remote_repository.networking_retrofit.interceptor
 
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -23,7 +23,7 @@ class CacheInterceptor : Interceptor {
 //            Alternatively set the cache in the header as:
             /*return originalResponse.newBuilder()
                     .header("Cache-Control", "public, max-stale=" + 60 * 60 * 24)
-                    .build();*/
+                    .build()*/
 
 
             request = request.newBuilder()

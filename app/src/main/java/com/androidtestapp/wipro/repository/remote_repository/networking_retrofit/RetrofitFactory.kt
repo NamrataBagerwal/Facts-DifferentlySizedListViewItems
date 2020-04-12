@@ -1,9 +1,7 @@
-package com.androidtestapp.wipro.repository.remotedatastore.networking.retrofit
+package com.androidtestapp.wipro.repository.remote_repository.networking_retrofit
 
-import com.androidtestapp.wipro.AppConstants
-import com.androidtestapp.wipro.repository.remotedatastore.networking.FactsApi
-import com.androidtestapp.wipro.repository.remotedatastore.networking.retrofit.interceptor.CacheInterceptor
-import com.androidtestapp.wipro.repository.remotedatastore.networking.retrofit.interceptor.OfflineCacheInterceptor
+import com.androidtestapp.wipro.repository.remote_repository.networking_retrofit.interceptor.CacheInterceptor
+import com.androidtestapp.wipro.repository.remote_repository.networking_retrofit.interceptor.OfflineCacheInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

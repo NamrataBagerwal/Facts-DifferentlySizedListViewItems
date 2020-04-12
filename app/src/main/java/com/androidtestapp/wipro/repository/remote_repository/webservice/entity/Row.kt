@@ -1,4 +1,4 @@
-package com.androidtestapp.wipro.repository.remotedatastore.entity
+package com.androidtestapp.wipro.repository.remote_repository.webservice.entity
 
 // Data Model for the Row item
 data class Row(
