@@ -12,8 +12,10 @@ open class BaseRepository {
         var data: T? = null
 
         when (result) {
-            is Result.Success ->
+            is Result.Success -> {
                 data = result.data
+                Log.d(BaseRepository::class.simpleName, data.toString())
+            }
             is Result.Error -> {
                 Log.d(
                     BaseRepository::class.simpleName,

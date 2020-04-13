@@ -7,18 +7,46 @@
     android:orientation="vertical"
     tools:context=".ui.activity.FactsActivity">
 
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/contentLoadingProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:max="@android:integer/config_mediumAnimTime" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeToRefresh"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
         android:layout_weight="1">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/factsRecyclerView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/factsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/errorTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableBottom="@drawable/error_image"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
+
+        </FrameLayout>
+
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </LinearLayout>

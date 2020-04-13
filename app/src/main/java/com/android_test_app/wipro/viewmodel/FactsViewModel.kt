@@ -1,19 +1,19 @@
 package com.android_test_app.wipro.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.android_test_app.wipro.repository.remote_repository.webservice.FactsRepositoryImpl
 import com.android_test_app.wipro.repository.remote_repository.webservice.entity.FactsApiResponse
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelChildren
-import kotlinx.coroutines.isActive
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class FactsViewModel(private val factsRepository: FactsRepositoryImpl): ViewModel() {
+class FactsViewModel(private val factsRepository: FactsRepositoryImpl) : ViewModel() {
     private val parentJob = Job()
 
     private val coroutineContext: CoroutineContext
-    get() = parentJob + viewModelScope.coroutineContext + Dispatchers.IO
+        get() = parentJob + viewModelScope.coroutineContext + Dispatchers.IO
 
     private val factsLiveData: MutableLiveData<FactsApiResponse> by lazy {
         MutableLiveData<FactsApiResponse>().apply {
@@ -21,9 +21,10 @@ class FactsViewModel(private val factsRepository: FactsRepositoryImpl): ViewMode
         }
     }
 
-    private fun loadFacts(){
-        liveData(context = coroutineContext) {
-            emit(factsRepository.getFacts())
+    private fun loadFacts() {
+        viewModelScope.launch(context = coroutineContext) {
+            val facts = factsRepository.getFacts()
+            factsLiveData.postValue(facts)
         }
     }
 
@@ -31,16 +32,16 @@ class FactsViewModel(private val factsRepository: FactsRepositoryImpl): ViewMode
         return factsLiveData
     }
 
-    fun updateFactsLiveData(){
+    fun updateFactsLiveData() {
         loadFacts()
     }
 
     override fun onCleared() {
         super.onCleared()
-        if (coroutineContext.isActive){
+        if (coroutineContext.isActive) {
             coroutineContext.cancelChildren()
         }
-        if(parentJob.isActive){
+        if (parentJob.isActive) {
             parentJob.cancel()
         }
     }

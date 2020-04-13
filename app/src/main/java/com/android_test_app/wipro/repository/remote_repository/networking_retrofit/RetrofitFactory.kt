@@ -22,7 +22,6 @@ object RetrofitFactory {
         .client(okHttpClient)
         .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
-//        .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
 }

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.android_test_app.wipro.AppConstants
 import com.android_test_app.wipro.R
 import com.android_test_app.wipro.repository.remote_repository.webservice.entity.Row
 import com.bumptech.glide.Glide
@@ -20,7 +21,8 @@ class FactsAdapter: RecyclerView.Adapter<FactsAdapter.FactsViewHolder>() {
     }
 
     class FactsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val rowTitleMsgTextView: TextView = itemView.findViewById(R.id.rowTitleMsgTextView)
+        val rowTitleTextView: TextView = itemView.findViewById(R.id.rowTitleTextView)
+        val rowDescriptionTextView: TextView = itemView.findViewById(R.id.rowDescriptionTextView)
         val rowImageView: ImageView = itemView.findViewById(R.id.rowImageView)
     }
 
@@ -34,11 +36,15 @@ class FactsAdapter: RecyclerView.Adapter<FactsAdapter.FactsViewHolder>() {
     override fun onBindViewHolder(holder: FactsViewHolder, position: Int) {
         val row: Row? = factsList?.get(position)
 
-        holder.rowTitleMsgTextView.text = (row?.title + ":" + row?.description)
+        val title = row?.title?.trim() ?: AppConstants.FACTS_TITLE_DEFAULT_VALUE
+        val description = row?.description?.trim() ?: AppConstants.FACTS_DESCRIPTION_DEFAULT_VALUE
+        holder.rowTitleTextView.text = title
+        holder.rowDescriptionTextView.text = description
 
         Glide.with(holder.itemView.context)
             .load(row?.imageHref)
             .placeholder(R.drawable.placeholder_image)
+            .fallback(R.drawable.placeholder_image)
             .into(holder.rowImageView)
     }
 }
