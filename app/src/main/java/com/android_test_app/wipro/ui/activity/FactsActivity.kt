@@ -84,9 +84,6 @@ class FactsActivity : AppCompatActivity() {
     private fun observeFactsLiveData() {
         viewModel.getFactsLiveData().observe(this@FactsActivity,
             Observer { factsApiResponse ->
-                // Update UI
-                val actionBarTitle = factsApiResponse?.title
-                supportActionBar?.title = actionBarTitle
 
                 if (factsApiResponse?.rows.isNullOrEmpty()) {
                     if (NetworkUtility.isNetworkAvailable(this@FactsActivity) == null) {
@@ -96,6 +93,10 @@ class FactsActivity : AppCompatActivity() {
                     }
                     viewModel.updateFactsLiveData()
                 } else {
+                    // Update UI
+                    val actionBarTitle = factsApiResponse?.title
+                    supportActionBar?.title = actionBarTitle
+
                     showFactsView()
                     val adapter = FactsAdapter()
                     recyclerView.adapter = adapter
