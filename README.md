@@ -37,7 +37,13 @@ Recyclerview with LiveData from ViewModel will be loaded capable of handling scr
 Also try Pull To Refresh feature
 
 Each row of the table should look roughly like the following image:
-![Image description](link-to-image)
+![Facts List View](screenshots_videos/Facts_List_View.png)
+
+Error View loaded in case of Internet Off Connection/Server Unavailability:
+![ErrorView](screenshots_videos/ErrorView.png)
+
+Video:
+![Video](screenshots_videos/video.mp4)
 
 ## Running the tests
 
