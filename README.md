@@ -50,11 +50,14 @@ Select and run FactsActivityInternetOffInstrumentationTest with Internet Connect
 
 Images(Image Link) coming from the json feed link url(https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts) stated above has white extra background which gives extra-erraneous space in each row.
 
+Local Unit Tests written are failing and needs to be worked on.
 
 ## Future Enhancements
 
 Write Local Unit Tests by mocking Activity and ViewModel.
 UI Instrumentation Test Cases can be improved.
+Code Optimization and adding Comments
+
 
 ## Authors
 Namrata Bagerwal
