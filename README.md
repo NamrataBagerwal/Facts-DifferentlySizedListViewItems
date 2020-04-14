@@ -4,7 +4,7 @@ style.
 
 ## Detailed Specification
 
-1. This Android App ingests a json feed from https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json. The feed contains a title and a list of rows.
+1. This Android App ingests a json feed from https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts. The feed contains a title and a list of rows.
 2. Displays the content (including image, title and description) in a List.
  The title in the ActionBar is updated from the json data.
  Each row is dynamically sized to display its content. This means some rows will be larger than others.
@@ -48,11 +48,13 @@ Select and run FactsActivityInternetOffInstrumentationTest with Internet Connect
 
 ## Known Issues
 
+Images(Image Link) coming from the json feed link url(https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts) stated above has white extra background which gives extra-erraneous space in each row.
+
 
 ## Future Enhancements
 
 Write Local Unit Tests by mocking Activity and ViewModel.
-uI Instrumentation Test Cases can be improved.
+UI Instrumentation Test Cases can be improved.
 
 ## Authors
 Namrata Bagerwal
