@@ -30,7 +30,8 @@
                 android:id="@+id/factsRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/errorTextView"
@@ -41,7 +42,8 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:visibility="gone"/>
 
         </FrameLayout>
 

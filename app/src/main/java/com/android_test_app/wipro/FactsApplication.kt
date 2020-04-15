@@ -11,7 +11,6 @@ class FactsApplication : Application() {
         super.onCreate()
         // get list of all modules
         val diModuleList = listOf(
-//            DependencyInjectionModule.apiModule,
             DependencyInjectionModule.repositoryModule,
             DependencyInjectionModule.viewModelModule
         )

@@ -3,7 +3,6 @@ package com.android_test_app.wipro.ui.activity
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -37,8 +36,7 @@ class FactsActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             showProgressBar()
-        } else
-            hideProgressBar()
+        }
 
         observeFactsLiveData()
 
@@ -118,10 +116,6 @@ class FactsActivity : AppCompatActivity() {
         errorTextView.text = errorMessage
     }
 
-    override fun onDestroy() {
-        hideProgressBar()
-        super.onDestroy()
-    }
 
     private fun hideProgressBar() {
         progressBar.hide()

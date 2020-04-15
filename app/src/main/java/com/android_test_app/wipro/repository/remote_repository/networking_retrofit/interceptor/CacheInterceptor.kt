@@ -20,12 +20,6 @@ class CacheInterceptor : Interceptor {
                 .maxStale(1, TimeUnit.DAYS)
                 .build()
 
-//            Alternatively set the cache in the header as:
-            /*return originalResponse.newBuilder()
-                    .header("Cache-Control", "public, max-stale=" + 60 * 60 * 24)
-                    .build()*/
-
-
             request = request.newBuilder()
                 .cacheControl(cc)
                 .build()
