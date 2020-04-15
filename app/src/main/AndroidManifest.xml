@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/launcher_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name="com.android_test_app.wipro.ui.activity.FactsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
