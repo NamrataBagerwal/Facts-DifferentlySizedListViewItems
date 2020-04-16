@@ -54,7 +54,8 @@ class FactsActivityInternetOffInstrumentationTest {
             )
         )
         actionBarView.check(matches((isDisplayed())))
-        actionBarView.check(matches(ViewMatchers.withText("WiproAndroidProficiencyTest")))
+
+        actionBarView.check(matches(ViewMatchers.withText("Facts")))
     }
 
     private fun childAtPosition(
