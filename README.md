@@ -1,4 +1,4 @@
-# Facts - DifferentlySizedListViewItems
+# Facts - DynamicallySizedListViewItems
 This project consumes a REST service and displays photos with headings and descriptions. This was developed to assess candidate developer’s Android technical proficiency, coding knowledge and
 style.
 
@@ -14,7 +14,7 @@ style.
 ## Getting Started
 
 ```
-git clone https://github.com/NamrataBagerwal/Facts-DifferentlySizedListViewItems.git
+git clone https://github.com/NamrataBagerwal/Facts-DynamicallySizedListViewItems.git
 ```
 
 Or the same can be imported directly in Android Studio via VCS -> Git -> Clone.
